@@ -1,0 +1,15 @@
+/* Styles for the Sidebar component */
+.sidebar {
+    border-right: 1px solid #64748b;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.divider {
+    margin: 10px 0; 
+    height: 1px;
+    background-color: #e5e7eb; 
+    padding: 0 12px;
+}

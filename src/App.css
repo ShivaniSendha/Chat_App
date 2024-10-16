@@ -1,0 +1,11 @@
+
+/* App Container */
+.app-container {
+    padding: 16px; /* Equivalent to p-4 */
+    height: 100vh; /* Equivalent to h-screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  

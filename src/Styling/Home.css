@@ -1,0 +1,19 @@
+/* Styles for the Home component */
+.home-container {
+    display: flex;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(128, 128, 128, 0.4); 
+    backdrop-filter: blur(10px); 
+    
+}
+.authUser{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .home-container {
+        height: 550px; 
+    }
+}
