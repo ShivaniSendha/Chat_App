@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routets.js";
-
+import multer from "multer";
 import connectToMongoDB from "./db/connectionDB.js";
 import { app, server } from "./socket/socket.js";
 import cors from 'cors'
@@ -19,6 +19,11 @@ app.use(cors({
 
 dotenv.config();
 
+const upload = multer({ dest: 'uploads/' }); // Ensure the uploads directory exists
+
+app.post('/upload', upload.single('file'), (req, res) => {
+    res.send({ filePath: req.file.path });
+});
 const __dirname = path.resolve();
 // PORT should be assigned after calling dotenv.config() because we need to access the env variables. Didn't realize while recording the video. Sorry for the confusion.
 const PORT = process.env.PORT || 5000;

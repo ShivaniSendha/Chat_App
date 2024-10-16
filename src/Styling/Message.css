@@ -96,3 +96,148 @@
     background-color: #757575;
     color: white;
 }
+.chat {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    position: relative;
+}
+
+.chat-end {
+    justify-content: flex-end;
+}
+
+.chat-start {
+    justify-content: flex-start;
+}
+
+.chat-image {
+    margin-right: 10px;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.bg-blue {
+    background-color: #007bff;
+}
+
+.chat-footer {
+    font-size: 12px;
+    color: #a0a0a0;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-icons {
+    display: flex;
+    gap: 8px; /* Space between icons */
+}
+
+.edit-icon, .delete-icon {
+    cursor: pointer;
+    font-size: 18px; /* Adjust size as necessary */
+    color: #ffffff; /* Icon color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.edit-icon:hover {
+    color: #ffc107; /* Yellow on hover for edit icon */
+}
+
+.delete-icon:hover {
+    color: #dc3545; /* Red on hover for delete icon */
+}
+
+.message-popup {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 10;
+}
+
+.popup-button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button {
+    color: #dc3545;
+}
+
+.cancel-button {
+    color: #6c757d;
+}
+
+.delete-button:hover {
+    background-color: rgba(220, 53, 69, 0.1); /* Light red background on hover */
+}
+
+.cancel-button:hover {
+    background-color: rgba(108, 117, 125, 0.1); /* Light grey background on hover */
+}
+
+.edit-input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #f8f9fa; /* Light background for edit input */
+    margin-bottom: 5px;
+}
+
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.message-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.message-file {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.message-file:hover {
+    background: #0056b3; /* Darker blue on hover */
+}

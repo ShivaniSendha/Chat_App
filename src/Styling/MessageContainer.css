@@ -67,8 +67,20 @@
     color: #888; /* Gray color for the typing indicator */
     margin-left: 10px;
 }
+.onlines {
+color: green;
+font-size: 15px;
+}
 
 
+.offlines {
+    color: gray;
+    font-size: 15px;
+}
+.Names{
+    display: flex;
+    flex-direction: column;
+}
 @media (min-width: 640px) {
     .no-chat-content {
         font-size: 1.125rem; 

@@ -8,15 +8,13 @@ import '../../Styling/MessageContainer.css';
 import useGetConversations from "../../User/UserGetConversations";
 import { useSocketContext } from "../../Context/SocketContext";
 
-const MessageContainer = ({  }) => {
+const MessageContainer = () => {
     const { getConversations } = useGetConversations();
-    const { selectedConversation, setSelectedConversation ,conversation} = useConversation();
-    const { typingUsers } = useSocketContext();
+    const { selectedConversation, setSelectedConversation } = useConversation();
+    const { onlineUsers } = useSocketContext();
 
-    // Check if the current conversation is being typed on
-    const isTyping = typingUsers.has(conversation?._id); // Use optional chaining to avoid errors
-    console.log('isType',isTyping);
-    
+    // Check if the selected conversation user is online
+    const isOnline = onlineUsers.includes(selectedConversation?._id);
 
     useEffect(() => {
         return () => setSelectedConversation(null);
@@ -36,8 +34,14 @@ const MessageContainer = ({  }) => {
                                 alt={selectedConversation.fullName}
                                 className="profile-pic"
                             />
+                            <div className="Names">
                             <span className="name">{selectedConversation.fullName}</span>
-                            {isTyping && <p className="typing-indicator">Typing...</p>}
+                            {isOnline ? (
+                                <span className="status onlines">Online</span>
+                            ) : (
+                                <span className="status offlines">Offline</span>
+                            )}
+                            </div>
                         </div>
                     </div>
                     <Messages />

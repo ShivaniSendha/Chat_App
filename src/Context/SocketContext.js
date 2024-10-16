@@ -45,9 +45,18 @@ export const SocketContextProvider = ({ children }) => {
             }
         }
     }, [authUser]);
+	const sendMessage = (message) => {
+        socket.emit("sendMessage", { message });
+    };
 
+    const sendFile = (file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        socket.emit("fileUpload", formData); // Adjust based on your server logic
+    };
     return (
-        <SocketContext.Provider value={{ socket, onlineUsers, typingUsers }}>
+        <SocketContext.Provider value={{ socket, onlineUsers, typingUsers ,sendMessage,sendFile}}>
             {children}
         </SocketContext.Provider>
     );

@@ -29,6 +29,12 @@ io.on("connection", (socket) => {
         userSocketMap.set(userId, socket.id);
         console.log(`User ${userId} is now online`);
     }
+    socket.on("fileUpload", async ({ file, receiverId }) => {
+        // Use your multer setup to handle the file upload
+        // Send the file to the receiver via socket
+        const filePath = await handleFileUpload(file); // Your logic to save the file
+        io.to(receiverId).emit("receiveFile", { filePath });
+    });
 
     io.emit("getOnlineUsers", Array.from(userSocketMap.keys()));
 
